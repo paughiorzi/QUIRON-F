@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ListaDeProductos from './components/ListaDeProductos';
 
 function App() {
+  const arrayDeLink = [
+    {nombre:'Home', enlace: '/'}, 
+    {nombre:'Carrito', enlace: '/carrito'},  
+    {nombre:'Merch', enlace: '/merch'},  
+    {nombre:'Servicios', enlace: '/servicios'},  
+    {nombre:'Contacto', enlace: '/contacto'}, 
+   ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          ¡Bienvenidos a Quiron Fuerza!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          REACT JS
-        </a>
-      </header>
+    <div>
+    <NavBar arrayDeLink={arrayDeLink} tamaño={'20px'}/>
+    <ItemListContainer/>
+    <ListaDeProductos/>
     </div>
   );
 }
