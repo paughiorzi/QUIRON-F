@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/QUIRON-F/static/css/main.04179b6f.css",
+    "main.js": "/QUIRON-F/static/js/main.fce854b9.js",
+    "static/js/787.87adeaa2.chunk.js": "/QUIRON-F/static/js/787.87adeaa2.chunk.js",
+    "index.html": "/QUIRON-F/index.html",
+    "main.04179b6f.css.map": "/QUIRON-F/static/css/main.04179b6f.css.map",
+    "main.fce854b9.js.map": "/QUIRON-F/static/js/main.fce854b9.js.map",
+    "787.87adeaa2.chunk.js.map": "/QUIRON-F/static/js/787.87adeaa2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04179b6f.css",
+    "static/js/main.fce854b9.js"
+  ]
+}
