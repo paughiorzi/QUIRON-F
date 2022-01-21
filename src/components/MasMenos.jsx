@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, ButtonGroup } from "react-bootstrap";
 
 export default function MasMenos({tope}){
     const [cantidad, setCantidad] = useState(0);
@@ -12,7 +13,7 @@ export default function MasMenos({tope}){
     }
     let rest = 0;
     function restar(){
-        if (aux >= 0){
+        if (aux > 0){
             rest = aux - 1;
         }
         setCantidad(rest);
@@ -20,10 +21,16 @@ export default function MasMenos({tope}){
 
     return(
         <>
-        <span onClick={()=>restar()}> - </span>
-        {cantidad}
-        <span onClick={()=>sumar()}> + </span>
+        Cuantos productos desea llevar?
         <br />
+        <ButtonGroup aria-label="Basic example">
+          <Button variant="danger" onClick={()=>restar()}>-</Button>
+          <Button variant="light">{cantidad}</Button>
+          <Button variant="success" onClick={()=>sumar()}>+</Button>
+        </ButtonGroup>
+        {/* <span onClick={()=>restar()}> - </span> */}        
+        {/* <span onClick={()=>sumar()}> + </span> */}
+
         </>
     )
 }
