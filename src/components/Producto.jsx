@@ -29,15 +29,7 @@ export default function Producto({item, aux}){
           <MasMenos tope = {item.stock}/>
         <Button variant="primary" onClick={()=>onAdd()}>AGREGAR</Button>{' '}
         <br />
-        </Card>
-        {/* <p>{item.name}</p>
-        <p>{item.description}</p>
-        <p>{item.price}</p>
-        <p>{item.stock}</p>
-        <p>
-        <img src={item.img}/>
-        </p> */}
-        
+        </Card>        
         </>
     )
 }

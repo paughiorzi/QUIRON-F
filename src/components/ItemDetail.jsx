@@ -19,13 +19,13 @@ export default function ItemDetail({producto}) {
                       </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                      <ListGroupItem>Articulo:{producto.id}</ListGroupItem>
-                      <ListGroupItem>Precio:{producto.price}</ListGroupItem>
-                      <ListGroupItem>Stock disponible:{producto.stock}</ListGroupItem>
+                      <ListGroupItem>Articulo: {producto.id}</ListGroupItem>
+                      <ListGroupItem>Precio: {producto.price}</ListGroupItem>
+                      <ListGroupItem>Stock disponible: {producto.stock}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                      <Card.Link href="#">Card Link</Card.Link>
-                      <Card.Link href="#">Another Link</Card.Link>
+                      {/* <Card.Link href="#">Card Link</Card.Link>
+                      <Card.Link href="#">Another Link</Card.Link> */}
                     </Card.Body>
                     <MasMenos tope = {producto.stock}/>
                   <br />
