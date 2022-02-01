@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 
-export default function MasMenos({tope}){
+export default function ItemCount({tope, onAdd}){
     const [cantidad, setCantidad] = useState(0);
     let aux = cantidad;
 
@@ -28,9 +28,7 @@ export default function MasMenos({tope}){
           <Button variant="light">{cantidad}</Button>
           <Button variant="success" onClick={()=>sumar()}>+</Button>
         </ButtonGroup>
-        {/* <span onClick={()=>restar()}> - </span> */}        
-        {/* <span onClick={()=>sumar()}> + </span> */}
-
+        <Button variant="primary" onClick={()=> onAdd(cantidad)}>AGREGAR</Button>
         </>
     )
 }

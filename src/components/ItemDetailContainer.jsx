@@ -57,9 +57,9 @@ export default function ItemDetailContainer({ item, aux }) {
     <>
       {itemId}
       <ItemDetail producto={producto} />
+      <br/>
       <Link to={"/"}>ir a PRODUCTOS</Link>
-      <br />
-      <Link to={"/"}>ir al CARRITO</Link>
+      <br/>
     </>
   );
 }

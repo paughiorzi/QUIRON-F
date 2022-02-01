@@ -1,11 +1,7 @@
 import React from "react";
-import MasMenos from "./MasMenos";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 
 export default function Producto({item, aux}){
-    function onAdd(){
-        alert (item.name + " " + aux);
-    }
 
     return(
         <>PRODUCTO:
@@ -26,9 +22,6 @@ export default function Producto({item, aux}){
             <Card.Link href="#">Card Link</Card.Link>
             <Card.Link href="#">Another Link</Card.Link>
           </Card.Body>
-          <MasMenos tope = {item.stock}/>
-        <Button variant="primary" onClick={()=>onAdd()}>AGREGAR</Button>{' '}
-        <br />
         </Card>        
         </>
     )

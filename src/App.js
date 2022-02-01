@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import ListaDeProductosPromesa from "./components/Carrito";
+import ListaDeProductosPromesa from "./components/ListaDeProductosPromesa";
 
 function App() {
   const arrayDeLink = [

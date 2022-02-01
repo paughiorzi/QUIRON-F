@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Producto from "./Producto";
 
+
+///////////////////////No se usa - BORRAR///////////////////////
+
+
 export default function ListaDeProductosPromesa() {
     const [promesa, setPromesa]=useState([false]);
     const [ArrayDeProductos, setArrayDeProductos] = useState([]);
