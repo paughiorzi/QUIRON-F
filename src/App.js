@@ -1,11 +1,10 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import CartContext from "./components/CartContext";
+import CartContext from "./context/CartContext";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 /* import ListaDeProductosPromesa from "./components/ListaDeProductosPromesa"; */
@@ -16,8 +15,8 @@ function App() {
     { id: "1", nombre: "Home", enlace: "/" },
     { id: "2", nombre: "Carrito", enlace: "/cart" },
     { id: "3", nombre: "Merch", enlace: "/merch" },
-    { id: "4", nombre: "Servicios", enlace: "/servicios" },
-    { id: "5", nombre: "Contacto", enlace: "/contacto" },
+    /* { id: "4", nombre: "Servicios", enlace: "/servicios" },
+    { id: "5", nombre: "Contacto", enlace: "/contacto" }, */
   ];
   return (
     <div>
@@ -33,10 +32,13 @@ function App() {
         <Switch>
           {/* /////////// HOME ////////// */}
           <Route exact path="/">
-            <ItemListContainer />
             {/* <ListaDeProductosPromesa /> */}
-            
           </Route>
+          {/* /////////// PRODUCTOS ////////// */}
+          <Route exact path="/merch">
+            <ItemListContainer />
+          </Route>
+
           {/* /////////// Producto ////////// */}
           <Route path="/item/:itemId">
             <ItemDetailContainer />

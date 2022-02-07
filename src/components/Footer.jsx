@@ -8,7 +8,7 @@ const Footer = () => (
             <br/>
             <br/>
           <h5 className="text-uppercase">Gimnasio QUIRON Fuerza</h5>
-          <p class="pieDePagina">
+          <p className="pieDePagina">
             - En el polvo de la derrota y en los laureles de la victoria, se
             puede encontrar gloria si uno dio su mejor esfuerzo. -{" "}
             <strong>Eric Liddell</strong>
@@ -18,24 +18,24 @@ const Footer = () => (
         <hr className="clearfix w-100 d-md-none pb-0" />
 
         <div className="col-md-3 mb-md-0 mb-3">
-          <h6 class="text-uppercase fw-bold mb-4">Links utiles</h6>
+          <h6 className="text-uppercase fw-bold mb-4">Links utiles</h6>
           <p>
-            <a href="#!" class="text-reset">
+            <a href="#!" className="text-reset">
               Sedes
             </a>
           </p>
           <p>
-            <a href="#!" class="text-reset">
+            <a href="#!" className="text-reset">
               Planes
             </a>
           </p>
           <p>
-            <a href="#!" class="text-reset">
+            <a href="#!" className="text-reset">
               Novedades
             </a>
           </p>
           <p>
-            <a href="#!" class="text-reset">
+            <a href="#!" className="text-reset">
               Solicitar Baja
             </a>
           </p>

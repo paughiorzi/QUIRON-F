@@ -2,10 +2,10 @@ import { useState, useContext } from "react";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
-import { contexto } from "./CartContext";
+import { contexto } from "../context/CartContext";
 
 export default function ItemDetail({ producto }) {
-  const { alertEspacial, addToCart } = useContext(contexto);
+  const { addToCart } = useContext(contexto);
 
   const [mostrarItemCount, setMostrarItemCount] = useState(true);
 
@@ -27,7 +27,7 @@ export default function ItemDetail({ producto }) {
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>Articulo: {producto.id}</ListGroupItem>
-              <ListGroupItem>Precio: {producto.price}</ListGroupItem>
+              <ListGroupItem>Precio: $ {producto.price}</ListGroupItem>
               <ListGroupItem>Stock disponible: {producto.stock}</ListGroupItem>
             </ListGroup>
             <Card.Body>
@@ -39,15 +39,13 @@ export default function ItemDetail({ producto }) {
         ) : (
           <>Loading...</>
           )}
-          {/* LO HACE DESDE ItemCount <Button variant="primary" onClick={() => alertEspacial()}>Hacer el alert</Button> */}
-
         </div>
 
         {mostrarItemCount ? (
           <ItemCount tope={producto.stock} onAdd={onAdd} />
-        ) : (
-          <Link to={"/cart"}>ir al CARRITO</Link>
-        )}
+        )
+        :
+        (<Button variant="primary"><Link to={"/cart"} style={{ color: 'inherit', textDecoration: 'inherit'}}>Terminar mi Compra</Link></Button>)}
     </>
   );
 }

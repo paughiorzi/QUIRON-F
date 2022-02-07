@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Producto({item, aux}){
@@ -30,7 +30,7 @@ export default function Producto({item, aux}){
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
             <Card.Text>{item.description}</Card.Text>
-            <Card.Text>Precio: {item.price}</Card.Text>
+            <Card.Text>Precio: $ {item.price}</Card.Text>
             <Link to={"/item/00"+item.id}>Ver detalle</Link>
           </Card.Body>  
           <Card.Footer>

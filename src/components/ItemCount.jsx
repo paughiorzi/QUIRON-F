@@ -1,9 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
-import { contexto } from "./CartContext";
 
 export default function ItemCount({tope, onAdd}){
-    const { alertEspacial } = useContext(contexto);
 
     const [cantidad, setCantidad] = useState(0);
     let aux = cantidad;
@@ -31,9 +29,7 @@ export default function ItemCount({tope, onAdd}){
           <Button variant="light">{cantidad}</Button>
           <Button variant="success" onClick={()=>sumar()}>+</Button>
         </ButtonGroup>
-        <Button variant="primary" onClick={()=> onAdd(cantidad)}>AGREGAR</Button>
-        <Button variant="primary" onClick={() => alertEspacial()}>Hacer el alert</Button>
-        
+        <Button variant="primary" onClick={()=> onAdd(cantidad)}>AGREGAR</Button>        
         </>
     )
 }
