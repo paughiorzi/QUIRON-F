@@ -8,63 +8,47 @@ import { getFirestore } from "../firebase/firebase";
 export default function ItemDetailContainer({ item, aux }) {
   const [producto, setProducto] = useState({});
   const { itemId } = useParams();
-  
+  const [loading, setLoading] = useState();
+  const [error, setError] = useState();
+
   useEffect(() => {
 
+    setLoading(true);
 
-    setTimeout(() => {
-      const db = getFirestore();
-      const itemCollection = db.collection("items");
+    getFirestore()
 
-      
-      ///////////////no filtra el ID///////////////
-      
-      const miItem = itemCollection.doc('XQ84VshOVz1FvwqqILxe');
-      
-      /* let items = itemCollection.map(prod => ({ ...prod.data() }));
-      let miItem = items.find(prod => prod.id === itemId); */
-      /* const miItem = itemCollection.doc(itemCollection.filter((item) => item.id === itemId),[0]); */
-      
-      ///////////////no filtra el ID///////////////
+      .collection("items")
+      .doc(itemId)
 
-    miItem.get()    
+      .get()
       .then((doc) => {
-
-        /* console.log(doc.data());
-        console.log(doc.id);
-        console.log({ id: doc.id, ...doc.data() }); */
-
-        if (!doc.exists) {
-          console.log('no existe ese documento');
-          return
-        }
-
-        console.log('item found');
         setProducto({ id: doc.id, ...doc.data() });
-
+        console.log("hay producto")
       })
-      .catch((err)=>{
-        console.log(err);
-      })
-
-    }, 2000);
+      .catch((dataError) => setError(dataError))
+      .finally(() => setLoading(false));
   }, [itemId]);
 
   return (
     <>
-      {itemId}
-      <ItemDetail producto={producto} />
-      <br />
-      <br />
-      <Button variant="primary">
-        <Link
-          to="/merch"
-          style={{ color: "inherit", textDecoration: "inherit" }}
-        >
-          ir a PRODUCTOS
-        </Link>
-      </Button>
-      <br />
+      {loading ? (
+        <h1>Cargando...</h1>
+      ) : (
+        <div className="bodyList">
+          <ItemDetail producto={producto} />
+          <br />
+          <br />
+          <Button variant="primary">
+            <Link
+              to="/merch"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              ir a PRODUCTOS
+            </Link>
+          </Button>
+          <br />
+        </div>
+      )}
     </>
   );
 }

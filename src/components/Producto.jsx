@@ -31,7 +31,7 @@ export default function Producto({item, aux}){
             <Card.Title>{item.name}</Card.Title>
             <Card.Text>{item.description}</Card.Text>
             <Card.Text>Precio: $ {item.price}</Card.Text>
-            <Link to={"/item/00"+item.id}>Ver detalle</Link>
+            <Link to={"/item/"+item.id}>Ver detalle</Link>
           </Card.Body>  
           <Card.Footer>
             <small className="text-muted">Last updated 3 mins ago</small>

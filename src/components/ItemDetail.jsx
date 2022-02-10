@@ -9,7 +9,6 @@ export default function ItemDetail({ producto }) {
 
   const [mostrarItemCount, setMostrarItemCount] = useState(true);
 
-
   function onAdd(cantidad) {
     addToCart(producto, cantidad);
     alert("quiero agregar " + cantidad);
@@ -33,19 +32,24 @@ export default function ItemDetail({ producto }) {
             <Card.Body>
               {/* <Card.Link href="#">Card Link</Card.Link>
                       <Card.Link href="#">Another Link</Card.Link> */}
+              {mostrarItemCount ? (
+                <ItemCount tope={producto.stock} onAdd={onAdd} />
+              ) : (
+                <Button variant="primary">
+                  <Link
+                    to={"/cart"}
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    Terminar mi Compra
+                  </Link>
+                </Button>
+              )}
             </Card.Body>
-            
           </Card>
         ) : (
           <>Loading...</>
-          )}
-        </div>
-
-        {mostrarItemCount ? (
-          <ItemCount tope={producto.stock} onAdd={onAdd} />
-        )
-        :
-        (<Button variant="primary"><Link to={"/cart"} style={{ color: 'inherit', textDecoration: 'inherit'}}>Terminar mi Compra</Link></Button>)}
+        )}
+      </div>
     </>
   );
 }
