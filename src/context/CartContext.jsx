@@ -70,20 +70,24 @@ export default function CartContext({ children }) {
       event.preventDefault();
     });
     console.log(
-      `Your name is ${name} your email is ${email} you phone number ${numero} and you have to pay $ ${totalCart()}}`
+      `Your name is ${name} your email is ${email} you phone number ${numero} and you have to pay $ ${totalCart()}`
     );
 
     const newOrder = {
       buyer: name,
       email: email,
       phone: numero,
-      items: cart,
+      items:cart.map(cartItem => {
+        const id = cartItem.item.id;
+        const name = cartItem.item.name;
+        const price = cartItem.item.price * cartItem.cantidad;
+        return {id, name, price}   
+        }),
       date: firebase.firestore.Timestamp.fromDate(new Date()),
       total: totalCart(),
     };
 
-    orders
-      .add(newOrder)
+      orders.add(newOrder)
       .then(({ id }) => {
         setOrderId(id); //success
       })
