@@ -1,34 +1,14 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import { getFirestore } from "../firebase/firebase";
+import { useFirestoreItem } from "../hooks/useFirestore";
 
-export default function ItemDetailContainer({ item, aux }) {
-  const [producto, setProducto] = useState({});
-  const { itemId } = useParams();
-  const [loading, setLoading] = useState();
-  const [error, setError] = useState();
-
-  useEffect(() => {
-
-    setLoading(true);
-
-    getFirestore()
-
-      .collection("items")
-      .doc(itemId)
-
-      .get()
-      .then((doc) => {
-        setProducto({ id: doc.id, ...doc.data() });
-        console.log("hay producto")
-      })
-      .catch((dataError) => setError(dataError))
-      .finally(() => setLoading(false));
-  }, [itemId]);
-
+export default function ItemDetailContainer() {
+  
+    const { itemId } = useParams();
+    const { producto, loading } = useFirestoreItem("items", itemId);
+  
   return (
     <>
       {loading ? (

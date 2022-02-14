@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+/* import * as firebase from "firebase/app"; */
 import "firebase/firestore";
 
 const app = firebase.initializeApp(
@@ -18,3 +19,19 @@ export function getFirebase(){
 export function getFirestore(){
     return firebase.firestore(app);
 }
+
+/* const newOrder = {
+    buyer: name,
+    email: email,
+    items: cart,
+    date: firebase.firestore.Timestamp.fromDate(new Date()),
+    total: totalCart(),
+  }; */
+  
+  /* orders.add(newOrder).then(({ id }) => {
+    setOrderId(id); //success
+  }).catch(err =>{
+    setError(err); //error
+  }).finally(()=>{
+    setLoading(false);
+  }); */

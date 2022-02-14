@@ -1,10 +1,20 @@
 import React, { useState, createContext } from "react";
+import { getFirestore } from "../firebase/firebase";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { useFirestoreItem } from "../hooks/useFirestore";
 
 export const contexto = createContext();
 
 export default function CartContext({ children }) {
+  const { setLoading, setError } = useFirestoreItem("items");
+  const db = getFirestore();
   const [cart, setCart] = useState([]);
-
+  const orders = db.collection("orders");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [numero, setNumero] = useState("");
+  const [orderId, setOrderId] = useState("");
 
   function addToCart(producto, cantidad, precio) {
     if (isInCart(producto.id)) {
@@ -31,19 +41,82 @@ export default function CartContext({ children }) {
 
   function cantCart() {
     ////////////Array.length////////////
-    return cart.map((item) => item.item.price * item.cantidad).length
-}
+    return cart.map((item) => item.item.price * item.cantidad).length;
+  }
 
-function totalCart() {
-    ////////////FUNCIONes Sub Total pantalla////////////
-    console.log(cart.map((item) => item.item.price * item.cantidad).reduce((a, b) => a + b));
-    ////////////Las 2 son iguales////////////
-    return cart.reduce((acum, value) => acum + (value.cantidad * value.item.price), 0)
+  function totalCart() {
+    /*console.log(cart.map((item) => item.item.price * item.cantidad).reduce((a, b) => a + b));
+
+    console.log(cart.reduce((acum, value) => acum + value.cantidad * value.item.price,[null]));
+    ////////////  Las 2 son iguales  //////////// */
+    return cart.reduce(
+      (acum, value) => acum + value.cantidad * value.item.price,
+      [null]
+    );
+  }
+
+  function onNameChange(evt) {
+    setName(evt.target.value);
+  }
+  function onEmailChange(evt) {
+    setEmail(evt.target.value);
+  }
+  function onNumberChange(evt) {
+    setEmail(evt.target.value);
+  }
+
+  function onSubmit() {
+    document.addEventListener("click", function (event) {
+      event.preventDefault();
+    });
+    console.log(
+      `Your name is ${name} your email is ${email} you phone number ${numero} and you have to pay $ ${totalCart()}}`
+    );
+
+    const newOrder = {
+      buyer: name,
+      email: email,
+      phone: numero,
+      items: cart,
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      total: totalCart(),
+    };
+
+    orders
+      .add(newOrder)
+      .then(({ id }) => {
+        setOrderId(id); //success
+      })
+      .catch((err) => {
+        setError(err); //error
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
     <>
-      <contexto.Provider value={{ cart, addToCart, deleteItem, clearCart, totalCart, cantCart }}>
+      <contexto.Provider
+        value={{
+          cart,
+          addToCart,
+          deleteItem,
+          clearCart,
+          totalCart,
+          cantCart,
+          onNameChange,
+          name,
+          setName,
+          onEmailChange,
+          email,
+          setEmail,
+          onNumberChange,
+          numero,
+          setNumero,
+          onSubmit,
+        }}
+      >
         {children}
       </contexto.Provider>
     </>
