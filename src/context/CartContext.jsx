@@ -50,8 +50,7 @@ export default function CartContext({ children }) {
     console.log(cart.reduce((acum, value) => acum + value.cantidad * value.item.price,[null]));
     ////////////  Las 2 son iguales  //////////// */
     return cart.reduce(
-      (acum, value) => acum + value.cantidad * value.item.price,
-      [null]
+      (acum, value) => acum + value.cantidad * value.item.price, 0
     );
   }
 
@@ -62,7 +61,7 @@ export default function CartContext({ children }) {
     setEmail(evt.target.value);
   }
   function onNumberChange(evt) {
-    setEmail(evt.target.value);
+    setNumero(evt.target.value);
   }
 
   function onSubmit() {

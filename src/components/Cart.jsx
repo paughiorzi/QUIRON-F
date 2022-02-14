@@ -15,7 +15,6 @@ export default function Cart() {
     email,
     onNumberChange,
     numero,
-    setNumero,
     onSubmit,
   } = useContext(contexto);
 
