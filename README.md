@@ -8,14 +8,14 @@ El objetivo de crear una e-commerce para un gimnasio, donde facilmente podras co
 
 ## Demostración
 
--Navegacion
--Ver Productos
--Sumar al carrito
--Restar del carrito
--Limpiar carrito
--Envio de orden de compra con formulario
+- Navegacion
+- Ver Productos
+- Sumar al carrito
+- Restar del carrito
+- Limpiar carrito
+- Envio de orden de compra con formulario
 
-![Demonstration](https://www.loom.com/share/f2a80501ee2645ea895dbe6d6677ccf0)
+Ir al siguiente link "https://www.loom.com/share/f2a80501ee2645ea895dbe6d6677ccf0"
 
 
 ### Tecnologias
