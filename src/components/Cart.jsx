@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { contexto } from "../context/CartContext";
 import CartItem from "./CartItem";
-import { Button, Form, Row, Col } from "react-bootstrap";
+import { Button, Form, Row } from "react-bootstrap";
 
 export default function Cart() {
   const {
@@ -33,7 +33,7 @@ export default function Cart() {
           </Button>
         </div>
       ) : (
-        <div>
+        <div className="cartList">
           {cart.map((element) => (
             <CartItem key={element.item.id} producto={element} />
           ))}
@@ -45,7 +45,7 @@ export default function Cart() {
       )}
       <div>
         <br />
-        <Form>
+        <Form className="formularioCarrito">
           <Row className="mb-3">
             <Form.Group className="mb-3" controlId="formGridAddress1">
               <Form.Label>Name</Form.Label>
@@ -55,7 +55,7 @@ export default function Cart() {
               />
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Group className="mb-3" controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
@@ -63,31 +63,28 @@ export default function Cart() {
                 onChange={(evt) => onEmailChange(evt)}
               />
             </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formGridAddress2">
+              <Form.Label>Phone number</Form.Label>
+              <Form.Control
+                placeholder="+54 011 31586647"
+                onChange={(evt) => onNumberChange(evt)}
+              />
+            </Form.Group>
           </Row>
 
-          <Form.Group className="mb-3" controlId="formGridAddress2">
-            <Form.Label>Phone number</Form.Label>
-            <Form.Control
-              placeholder="+54 011 31586647"
-              onChange={(evt) => onNumberChange(evt)}
-            />
-          </Form.Group>
-
-          {/* <Form.Group className="mb-3" id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group> */}
-
+          <div className="totalCarrito">
+            <h1>Total: $ {totalCart()}</h1>
+          </div>
           <Button
             variant="primary"
             type="submit"
             disabled={!(name !== "" && email !== "" && numero !== null)}
             onClick={(evt) => onSubmit(evt)}
           >
-            Enviar order de compra
+            Enviar orden de compra
           </Button>
         </Form>
-
-        {`Total: $ ${totalCart()}`}
       </div>
     </>
   );

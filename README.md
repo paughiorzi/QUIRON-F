@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# QUIRON Fuerza
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto de un gimnasio platense.
 
-## Available Scripts
+## Objetivos
 
-In the project directory, you can run:
+El objetivo de crear una e-commerce para un gimnasio, donde facilmente podras comprar la indumentario del lugar y lo necesario para entrenar. La idea principal es que se puedan hacer todas las acciones para realizar la compra dentro de la pagina.
 
-### `npm start`
+## Demostración
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Navegacion
+-Ver Productos
+-Sumar al carrito
+-Restar del carrito
+-Limpiar carrito
+-Envio de orden de compra con formulario
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Demonstration](https://www.loom.com/share/f2a80501ee2645ea895dbe6d6677ccf0)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tecnologias
 
-### `npm run build`
+- React Js 
+- HTML
+- CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Paso a paso para la visualizacion del proyecto 
+ - En Visual Studio Code, esribir 'git clone'y luego pegar la la siguiente URL 'https://github.com/paughiorzi/QUIRON-F'
+ - Luego de clonar el repositorio, para poder abrir el proyecto, se deben instalar los siguientes complementos:
+	- reac-router.dom : es una libreria para una mejor navegabilidad. Para instalarla se debe ejecutar:
+	npm install react-router-dom
+ - Una vez instalado el react router dom, lo que deben hacer es ejecutar el siguiente codigo:
+	npm star
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El proyecto se ejecutar en modo desarrollo, en un localhost:3000. La pagina tiene actualizacion automatica si se realizar alguna correcion.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Proyecto
+El proyecto aun en construccion cuenta con lo siguientes componentes:
+- Nav Bar: barra de navegacion
+- ItemListContainer: componente para renderizar la informacion, en este caso de ItemList
+- ItemList: componenta para mapear las props de los objetos
+- Item: contiene los cards de cada objeto
+- ItemCount: componente creado para el contador de los productos
+- ItemDetailContainer: idem ItemListContainer pero usado para ItemDetail
+- ItemDetail: idem Item pero con mas detalle para el consumidor y la opcion de agregarlo al Card

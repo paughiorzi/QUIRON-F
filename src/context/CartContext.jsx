@@ -45,10 +45,6 @@ export default function CartContext({ children }) {
   }
 
   function totalCart() {
-    /*console.log(cart.map((item) => item.item.price * item.cantidad).reduce((a, b) => a + b));
-
-    console.log(cart.reduce((acum, value) => acum + value.cantidad * value.item.price,[null]));
-    ////////////  Las 2 son iguales  //////////// */
     return cart.reduce(
       (acum, value) => acum + value.cantidad * value.item.price, 0
     );

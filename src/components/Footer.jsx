@@ -5,8 +5,8 @@ const Footer = () => (
     <div className="container-fluid text-center text-md-left">
       <div className="row">
         <div className="col-md-6 mt-md-0 mt-3">
-            <br/>
-            <br/>
+          <br />
+          <br />
           <h5 className="text-uppercase">Gimnasio QUIRON Fuerza</h5>
           <p className="pieDePagina">
             - En el polvo de la derrota y en los laureles de la victoria, se

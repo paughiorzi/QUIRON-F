@@ -18,7 +18,6 @@ export default function ItemListContainer() {
             return;
           }
           console.log("hay documentos");
-          //console.log(querySnapShot.docs);
 
           setItems(
             querySnapShot.docs.map((doc) => {

@@ -1,6 +1,73 @@
+
 .App {
   text-align: center;
 }
+
+.quironF {
+  font-size: 1.6em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.productosGral {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 20px 300px;
+}
+.productoPuntual {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px;
+}
+.switch {
+  background-image: url("https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contador {
+  margin: 5px;
+  display: flex;
+  text-align: center;
+}
+.botonSecundario {
+  background-color: #0000007c;
+  border-color: #9696967c;
+}
+.cantidadEnCarrito {
+  border-radius: 100px;
+  background-color: orange;
+  border-width: 0;
+  transition: 0.7s;
+}
+.cantidadEnCarrito:hover {
+  background-color: orangered;
+}
+.cartList {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 0 50px;
+}
+.detalleCartList {
+  background-color: rgba(0, 0, 0, 0.411);
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
+}
+.formularioCarrito{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+  padding: 50px;
+}
+
+
 
 .App-logo {
   height: 40vmin;

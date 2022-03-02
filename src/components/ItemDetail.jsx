@@ -11,12 +11,13 @@ export default function ItemDetail({ producto }) {
 
   function onAdd(cantidad) {
     addToCart(producto, cantidad);
-    alert("quiero agregar " + cantidad);
+    alert(cantidad + " unidad/es agregada/s");
     setMostrarItemCount(false);
   }
   return (
     <>
-      <div>
+      <link rel="stylesheet" href="./scss/style.css"></link>
+      <div className="funcionaLPQTP">
         {producto.id ? (
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={producto.img} />
@@ -30,12 +31,10 @@ export default function ItemDetail({ producto }) {
               <ListGroupItem>Stock disponible: {producto.stock}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-              {/* <Card.Link href="#">Card Link</Card.Link>
-                      <Card.Link href="#">Another Link</Card.Link> */}
               {mostrarItemCount ? (
                 <ItemCount tope={producto.stock} onAdd={onAdd} />
               ) : (
-                <Button variant="primary">
+                <Button variant="primary" className="botonSecundario">
                   <Link
                     to={"/cart"}
                     style={{ color: "inherit", textDecoration: "inherit" }}

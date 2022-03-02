@@ -5,10 +5,9 @@ import ItemDetail from "./ItemDetail";
 import { useFirestoreItem } from "../hooks/useFirestore";
 
 export default function ItemDetailContainer() {
-  
-    const { itemId } = useParams();
-    const { producto, loading } = useFirestoreItem("items", itemId);
-  
+  const { itemId } = useParams();
+  const { producto, loading } = useFirestoreItem("items", itemId);
+
   return (
     <>
       {loading ? (
@@ -17,13 +16,12 @@ export default function ItemDetailContainer() {
         <div className="bodyList">
           <ItemDetail producto={producto} />
           <br />
-          <br />
-          <Button variant="primary">
+          <Button variant="primary" className="botonSecundario">
             <Link
               to="/merch"
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
-              ir a PRODUCTOS
+              Ir a Productos
             </Link>
           </Button>
           <br />
